@@ -18,16 +18,16 @@ def pregunta_01():
     -------------------------------------------------------------------------------------
     """
     # Lea el archivo `insurance.csv` y asignelo al DataFrame `df`
-    df = ____
+    df = pd.read_csv('insurance.csv')
 
     # Asigne la columna `charges` a la variable `y`.
-    ____ = ____
+    y = df['charges'].values
 
     # Asigne una copia del dataframe `df` a la variable `X`.
-    ____ = ____.____(____)
+    X = df.copy(deep = True)
 
     # Remueva la columna `charges` del DataFrame `X`.
-    ____.____(____)
+    X.drop(columns = ['charges'], inplace = True)
 
     # Retorne `X` y `y`
     return X, y
